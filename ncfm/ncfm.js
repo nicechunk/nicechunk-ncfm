@@ -690,7 +690,7 @@ function drawIntersectionStage() {
   drawPolygon(context, planeCorners, "rgba(144, 215, 255, 0.055)", "rgba(144, 215, 255, 0.22)");
 
   const hitCubes = [];
-  columnPoints.forEach(({ x, y, minZ, maxZ, depth }) => {
+  columns.forEach(({ x, y, minZ, maxZ, depth }) => {
     if (Math.abs(x - scanX) < 5.2 || ((x * 7 + y * 3 + Math.floor(time * 5)) % 17 === 0)) {
       const step = Math.max(1, Math.ceil((maxZ - minZ + 1) / 3));
       for (let z = minZ; z <= maxZ; z += step) {
@@ -699,7 +699,7 @@ function drawIntersectionStage() {
     }
   });
 
-  columnPoints.forEach(({ x, y, minZ, maxZ }) => {
+  columns.forEach(({ x, y, minZ, maxZ }) => {
     const point = projectVoxelPoint(x, y, 0, angle, scale, ox, oy);
     context.fillStyle = "rgba(144, 215, 255, 0.32)";
     context.beginPath();

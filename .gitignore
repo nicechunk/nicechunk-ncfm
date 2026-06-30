@@ -1,43 +1,36 @@
-# Local secrets and machine-specific config
-.env
-.env.*
 .auth/
 .deploy/
 .gh-config/
 .ssh/
 .anchor/
-.cache/
 debug/
 .split-repos/
 .split-repos-prepared/
+node_modules/
+dist/
+target/
+build/
+deploy/
+Guardian/build/
+Guardian/scripts/setup_wss_node.sh
+nginx.conf
+nginx.site.conf
 rpc_key
 hosts.yml
+known_hosts
 id_rsa
 id_ed25519
 *keypair*.json
 *.pem
 *.key
-
-# Dependencies
-node_modules/
-
-# Build outputs
-dist/
-target/
-Guardian/build/
-build/
-deploy/
-**/deploy/
-
-# Server sync and deployment scripts must stay off GitHub and out of rsync payloads
+*.p12
+*.pfx
 scripts/sync-to-server.sh
 deploy/sync-site.sh
 **/sync-to-server.sh
 **/sync-site.sh
 **/*deploy*.sh
-
-# Logs and caches
+.env
+.env.*
 *.log
 .DS_Store
-.vite/
-coverage/
